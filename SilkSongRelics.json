@@ -1,0 +1,11 @@
+{
+  "id": "SilkSongRelics",          
+  "name": "丝之歌遗物",
+  "author": "Reddo",
+  "description": "增加了来自丝之歌的部分遗物。",
+  "version": "1.0",
+  "has_pck": true,         
+  "has_dll": true,       
+  "dependencies": ["BaseLib"],    
+  "affects_gameplay": true 
+}

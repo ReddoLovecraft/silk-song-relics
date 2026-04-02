@@ -1,0 +1,6 @@
+{
+	"BURN_POWER.title": "点燃",
+	"BURN_POWER.description": "回合开始时，失去层数点生命，回合结束时将层数增加[blue]1[/blue]层。",
+	"TOOL.title": "工具X",
+	"TOOL.description": "计数上限为X，可在休息处使用行动补充所有[gold]工具[/gold]遗物计数至其上限。\n右键该遗物时可消耗[blue]1[/blue]点计数将具有指定效果的[blue]0[/blue]费[gold]消耗[/gold]卡牌加入手中(某些具有直接效果的遗物除外)。"
+}
