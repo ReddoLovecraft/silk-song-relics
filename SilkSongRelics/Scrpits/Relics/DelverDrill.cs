@@ -19,6 +19,7 @@ using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.Saves.Runs;
+using Patchoulib.Scrpits.Main;
 using SilkSong.Scrpits.Main;
 using SilkSong.Scrpits.Relics;
 using SilkSongRelics.Scrpits.Cards;
@@ -31,13 +32,10 @@ public class DelverDrill: ToolRelic
 {
     public override CardModel ToolCard=> Owner.Creature.CombatState.CreateCard<ToolDelverDrill>(Owner);
         private int cnt=9;
-    static string text = StringHelper.Slugify("Tool");
-    static LocString locString = ToolBox.L10NStatic(text + ".title");
-    static LocString locString2 = ToolBox.L10NStatic(text + ".description");
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (new IHoverTip[2]
         {
           StunIntent.GetStaticHoverTip(),
-          new HoverTip(locString,locString2)
+           Tools.GetStaticKeyword("Tool")
         });
     [SavedProperty]
     public override int ToolCount

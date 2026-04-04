@@ -15,12 +15,13 @@ using MegaCrit.Sts2.Core.Models.RelicPools;
 using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
+using Patchouib.Scrpits.Main;
 using SilkSong.Scrpits.Relics;
 
 namespace SilkSongRelics.Scrpits.Relics
 {
 [Pool(typeof(SharedRelicPool))]
-public class ReserveBind : SilkSongReic
+public class ReserveBind : SilkSongReic,IRightCilckable
 {
 	public override bool IsUsedUp => usedup;
 	bool usedup=false;
@@ -40,7 +41,7 @@ public class ReserveBind : SilkSongReic
 		    usedup=false;
 		}
 	}
-    public override async Task OnRightClick(PlayerChoiceContext context)
+    public  async Task OnRightClick(PlayerChoiceContext context)
         {
             if(Owner.Creature.CombatState.RunState.CurrentRoom is CombatRoom&&!IsUsedUp)
             {

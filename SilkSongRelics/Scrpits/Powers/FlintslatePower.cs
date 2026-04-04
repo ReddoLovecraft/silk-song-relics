@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using Patchoulib.Scrpits.Main;
 using SilkSong.Scrpits.Main;
 
 namespace SilkSongRelics.Scrpits.Powers
@@ -23,12 +24,9 @@ namespace SilkSongRelics.Scrpits.Powers
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
         public override string? CustomPackedIconPath => "res://SilkSongRelics/ArtWorks/Powers/FP32.png";
         public override string? CustomBigIconPath => "res://SilkSongRelics/ArtWorks/Powers/FP64.png";
-		static string text = StringHelper.Slugify("BurnPower");
-    	static LocString locString = ToolBox.L10NStatic(text + ".title");
-    	static LocString locString2 = ToolBox.L10NStatic(text + ".description");
     	protected override IEnumerable<IHoverTip> ExtraHoverTips => (new IHoverTip[1]
         {
-       new HoverTip(locString,locString2)
+          Tools.GetStaticKeyword("BurnPower")
         });	
         public FlintslatePower() { }
 	 public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)

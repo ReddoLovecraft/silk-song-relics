@@ -11,13 +11,15 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Runs;
+using Patchouib.Scrpits.Main;
+using Patchoulib.Scrpits.Main;
 using SilkSong.Scrpits.Main;
 using SilkSongRelics.Scrpits.Main;
 using System.Linq;
 namespace SilkSong.Scrpits.Relics
 {
-public abstract class ToolRelic : SilkSongReic
-{
+public abstract class ToolRelic : SilkSongReic, IRightCilckable
+    {
     private int cnt=0;
     public virtual CardModel ToolCard=>null;
     [SavedProperty]
@@ -41,12 +43,9 @@ public abstract class ToolRelic : SilkSongReic
 			return ToolCount;
 		}
 	}
-     static string text = StringHelper.Slugify("Tool");
-    static LocString locString = ToolBox.L10NStatic(text + ".title");
-    static LocString locString2 = ToolBox.L10NStatic(text + ".description");
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (new IHoverTip[1]
         {
-       new HoverTip(locString,locString2)
+       Tools.GetStaticKeyword("Tool")
         });
     public virtual async Task OnRightClick(PlayerChoiceContext context)
     {

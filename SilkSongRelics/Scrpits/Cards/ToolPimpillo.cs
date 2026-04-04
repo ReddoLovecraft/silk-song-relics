@@ -1,15 +1,16 @@
+using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.ValueProps;
-using MegaCrit.Sts2.Core.Models.CardPools;
-using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Entities.Creatures;
-using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.ValueProps;
+using Patchoulib.Scrpits.Main;
 using SilkSong.Scrpits.Main;
 using SilkSongRelics.Scrpits.Powers;
 
@@ -25,12 +26,9 @@ public class ToolPimpillo : CustomCardModel
 		[
         new CardsVar(15)
         ];
-	static string text = StringHelper.Slugify("BurnPower");
-    static LocString locString = ToolBox.L10NStatic(text + ".title");
-    static LocString locString2 = ToolBox.L10NStatic(text + ".description");
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (new IHoverTip[1]
         {
-       new HoverTip(locString,locString2)
+           Tools.GetStaticKeyword("BurnPower")
         });
 	public ToolPimpillo() : base(0, CardType.Skill, CardRarity.None, TargetType.AllEnemies)
 	{

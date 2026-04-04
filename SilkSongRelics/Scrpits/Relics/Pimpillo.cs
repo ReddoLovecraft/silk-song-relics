@@ -18,6 +18,7 @@ using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.Saves.Runs;
+using Patchoulib.Scrpits.Main;
 using SilkSong.Scrpits.Main;
 using SilkSong.Scrpits.Relics;
 using SilkSongRelics.Scrpits.Cards;
@@ -30,16 +31,10 @@ public class Pimpillo: ToolRelic
 {
     public override CardModel ToolCard=> Owner.Creature.CombatState.CreateCard<ToolPimpillo>(Owner);
         private int cnt=4;
-    static string text = StringHelper.Slugify("Tool");
-    static LocString locString = ToolBox.L10NStatic(text + ".title");
-    static LocString locString2 = ToolBox.L10NStatic(text + ".description");
-    static string text2 = StringHelper.Slugify("BurnPower");
-    	static LocString locString3 = ToolBox.L10NStatic(text2 + ".title");
-    	static LocString locString4 = ToolBox.L10NStatic(text2 + ".description");
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (new IHoverTip[2]
         {
-         new HoverTip(locString3,locString4),
-          new HoverTip(locString,locString2)
+          Tools.GetStaticKeyword("Tool"),
+          Tools.GetStaticKeyword("BurnPower")
         });
     [SavedProperty]
     public override int ToolCount

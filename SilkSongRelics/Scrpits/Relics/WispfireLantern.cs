@@ -17,6 +17,7 @@ using MegaCrit.Sts2.Core.Models.RelicPools;
 using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
+using Patchoulib.Scrpits.Main;
 using SilkSong.Scrpits.Main;
 using SilkSong.Scrpits.Relics;
 using SilkSongRelics.Scrpits.Powers;
@@ -27,12 +28,9 @@ namespace SilkSongRelics.Scrpits.Relics
 public class WispfireLantern: SilkSongReic
 {
     public override RelicRarity Rarity => RelicRarity.Uncommon;
-	 static string text = StringHelper.Slugify("BurnPower");
-    static LocString locString = ToolBox.L10NStatic(text + ".title");
-    static LocString locString2 = ToolBox.L10NStatic(text + ".description");
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (new IHoverTip[2]
         {
-       new HoverTip(locString,locString2),
+        Tools.GetStaticKeyword("BurnPower"),
        HoverTipFactory.ForEnergy(this)
         });
       protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[1]

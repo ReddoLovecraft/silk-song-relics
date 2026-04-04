@@ -18,6 +18,7 @@ using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.Saves.Runs;
+using Patchoulib.Scrpits.Main;
 using SilkSong.Scrpits.Main;
 using SilkSong.Scrpits.Relics;
 using SilkSongRelics.Scrpits.Cards;
@@ -45,16 +46,10 @@ public class Flintslate: ToolRelic
 			    InvokeDisplayAmountChanged();
         }
     }
-       static string text = StringHelper.Slugify("Tool");
-    	static LocString locString = ToolBox.L10NStatic(text + ".title");
-    	static LocString locString2 = ToolBox.L10NStatic(text + ".description");
-      static string text2 = StringHelper.Slugify("BurnPower");
-    	static LocString locString3 = ToolBox.L10NStatic(text2 + ".title");
-    	static LocString locString4 = ToolBox.L10NStatic(text2 + ".description");
     	protected override IEnumerable<IHoverTip> ExtraHoverTips => (new IHoverTip[2]
         {
-       new HoverTip(locString,locString2),
-        new HoverTip(locString3,locString4)
+         Tools.GetStaticKeyword("Tool"),
+         Tools.GetStaticKeyword("BurnPower")
         });	
     public override RelicRarity Rarity => RelicRarity.Rare;
    public override async Task OnRightClick(PlayerChoiceContext context)

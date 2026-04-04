@@ -18,6 +18,7 @@ using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
+using Patchoulib.Scrpits.Main;
 using SilkSong.Scrpits.Main;
 using SilkSong.Scrpits.Relics;
 using SilkSongRelics.Scrpits.Powers;
@@ -28,12 +29,10 @@ namespace SilkSongRelics.Scrpits.Relics
 public class MagmaBell : SilkSongReic
 {
     public override RelicRarity Rarity => RelicRarity.Common;
-	 static string text = StringHelper.Slugify("BurnPower");
-    static LocString locString = ToolBox.L10NStatic(text + ".title");
-    static LocString locString2 = ToolBox.L10NStatic(text + ".description");
+	
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (new IHoverTip[1]
         {
-       new HoverTip(locString,locString2)
+       Tools.GetStaticKeyword("BurnPower")
         });
    public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
 	{

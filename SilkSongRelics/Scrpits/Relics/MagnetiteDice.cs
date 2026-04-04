@@ -13,6 +13,7 @@ using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
+using Patchoulib.Scrpits.Main;
 using SilkSong.Scrpits.Main;
 using SilkSong.Scrpits.Relics;
 
@@ -32,12 +33,12 @@ public class MagnetiteDice : SilkSongReic
             {
                 amount-=diceResult;
                 amount=amount<0?0:amount;
-                ToolBox.MyTalk($"命运的骰子已然掷出，出目为{diceResult}！\n本次伤害减免至{amount}", target);
+                Tools.Talk($"命运的骰子已然掷出，出目为{diceResult}！\n本次伤害减免至{amount}", target);
             }
             else
             {
                 amount*=2;
-                ToolBox.MyTalk($"不好，出目为{diceResult}！本次伤害翻倍！", target);
+                    Tools.Talk($"不好，出目为{diceResult}！本次伤害翻倍！", target);
             }
         }
         else if(target!=null)
@@ -48,11 +49,11 @@ public class MagnetiteDice : SilkSongReic
             {
                 amount+=diceResult;
                 amount=amount<0?0:amount;
-                ToolBox.MyTalk($"命运的骰子已然掷出，出目为{diceResult}！\n本次伤害增加至{amount}", target);
+                    Tools.Talk($"命运的骰子已然掷出，出目为{diceResult}！\n本次伤害增加至{amount}", target);
             }
             else
             {
-                  ToolBox.MyTalk($"不好，出目为{diceResult}！本次伤害归零！", target);
+                    Tools.Talk($"不好，出目为{diceResult}！本次伤害归零！", target);
                 amount=0;
             }
         }
