@@ -25,7 +25,7 @@
   "SILKSONGRELICS-SCUTTLEBRACE.description": "拾起时，为你卡组中的所有[gold]技能牌[/gold][gold]附魔[/gold]：[purple]迅捷[/purple][blue]2[/blue]。",
   "SILKSONGRELICS-SCUTTLEBRACE.flavor": "紧扣甲壳的仿生脊柱，增强持有者的灵活性，实现快速撤离。",
   "SILKSONGRELICS-ASCENDANT_GRIP.title": "登极握爪",
-  "SILKSONGRELICS-ASCENDANT_GRIP.description": "在你的回合结束时，选择任意张手牌[gold]保留[/gold]。",
+  "SILKSONGRELICS-ASCENDANT_GRIP.description": "在你的回合结束时，选择任意张[gold]手牌保留[/gold]。",
   "SILKSONGRELICS-ASCENDANT_GRIP.flavor": "镀金岩钉，允许使用者在攀爬墙面时固定身体。",
   "SILKSONGRELICS-ASCENDANT_GRIP.selectionScreenPrompt": "选择任意张牌[gold]保留[/gold]。",
   "SILKSONGRELICS-SPIDER_STRING.title": "蛛丝弦",

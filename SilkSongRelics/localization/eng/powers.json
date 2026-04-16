@@ -1,0 +1,14 @@
+{
+"SILKSONGRELICS-BURN_POWER.description": "At the start of turn, lose HP equal to the stack count, and at the end of turn, increase the stack count by [blue]1[/blue].",
+"SILKSONGRELICS-BURN_POWER.smartDescription": "At the start of turn, lose [blue]{Amount}[/blue] HP, and at the end of turn, increase the stack count by [blue]1[/blue].",
+"SILKSONGRELICS-BURN_POWER.title": "Ignite",
+"SILKSONGRELICS-SNARE_SETTER_POWER.description": "On the next [blue]1[/blue] time(s) you are attacked, deal [blue]25[/blue] damage to all enemies.",
+"SILKSONGRELICS-SNARE_SETTER_POWER.smartDescription": "On the next [blue]{Amount}[/blue] time(s) you are attacked, deal [blue]25[/blue] damage to all enemies.",
+"SILKSONGRELICS-SNARE_SETTER_POWER.title": "Trap",
+"SILKSONGRELICS-FLINTSLATE_POWER.description": "Damage dealt this turn is increased by [blue]50%[/blue]. Whenever you deal damage to an enemy, apply [blue]3[/blue] stacks of [gold]Ignite[/gold].",
+"SILKSONGRELICS-FLINTSLATE_POWER.smartDescription": "Damage dealt this turn is increased by [blue]50%[/blue]. Whenever you deal damage to an enemy, apply [blue]{Amount}[/blue] stacks of [gold]Ignite[/gold].",
+"SILKSONGRELICS-FLINTSLATE_POWER.title": "Flame Infusion",
+"SILKSONGRELICS-COGFLY_POWER.description": "At the start of your turn, deal [blue]3[/blue] damage at random.",
+"SILKSONGRELICS-COGFLY_POWER.smartDescription": "At the start of your turn, deal [blue]3[/blue] damage [blue]{Amount}[/blue] time(s) at random.",
+"SILKSONGRELICS-COGFLY_POWER.title": "Cogfly"
+}

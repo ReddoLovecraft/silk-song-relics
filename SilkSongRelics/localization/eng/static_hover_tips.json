@@ -1,0 +1,6 @@
+{
+"BURN_POWER.title": "Ignite",
+"BURN_POWER.description": "At the start of turn, lose HP equal to the stack count, and at the end of turn, increase the stack count by [blue]1[/blue].",
+"TOOL.title": "Tool X",
+"TOOL.description": "The count cap is X. You can recover the count of all [gold]Tool[/gold] relics to their cap at [gold]Rest Sites[/gold].\nRight-click this relic to consume [blue]1[/blue] count and add a [blue]0[/blue]-cost [gold]Exhaust[/gold] card with a specified effect to your hand (except for certain relics with direct effects)."
+}
