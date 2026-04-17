@@ -1,4 +1,5 @@
 using BaseLib.Abstracts;
+using BaseLib.Hooks;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -15,9 +16,10 @@ using SilkSong.Scrpits.Relics;
 namespace SilkSongRelics.Scrpits.Relics
 {
 [Pool(typeof(SharedRelicPool))]
-public class ShellSatchel : SilkSongReic
+public class ShellSatchel : SilkSongReic,IMaxHandSizeModifier
 {
     public override RelicRarity Rarity => RelicRarity.Common;
+    public int ModifyMaxHandSize(Player player, int currentMaxHandSize) => 12;
    
 }
 }
