@@ -22,7 +22,7 @@ public class WeightedBelt: SilkSongReic
     public override RelicRarity Rarity => RelicRarity.Uncommon;
      public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
 	{
-		if (cardPlay.Card.Owner == base.Owner&&cardPlay.Card.Type==CardType.Attack)
+		if (cardPlay.Card.Owner == base.Owner&&cardPlay.Card.Type==CardType.Attack&& cardPlay.Resources.EnergyValue >0)
 		{
 			 await CardPileCmd.Add(cardPlay.Card, PileType.Hand);
 		}

@@ -29,7 +29,7 @@ namespace SilkSongRelics.Scrpits.Relics
 public class RosaryCannon: ToolRelic
 {
     public override CardModel ToolCard=> Owner.Creature.CombatState.CreateCard<ToolRosaryCannon>(Owner);
-        private int cnt=80;
+        private int cnt=8;
     [SavedProperty]
     public override int ToolCount
     {
@@ -43,7 +43,7 @@ public class RosaryCannon: ToolRelic
     }
         public override void Reset()
         {
-            cnt = 80;
+            cnt = 8;
         }
         public override RelicRarity Rarity => RelicRarity.Uncommon;
 }

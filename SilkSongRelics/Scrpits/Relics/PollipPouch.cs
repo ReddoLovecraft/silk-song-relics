@@ -25,7 +25,7 @@ namespace SilkSongRelics.Scrpits.Relics
 public class PollipPouch : SilkSongReic
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [(HoverTipFactory.Static(StaticHoverTip.Block))];
-    public override RelicRarity Rarity => RelicRarity.Uncommon;
+    public override RelicRarity Rarity => RelicRarity.Rare;
     public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
 	{
 		if (!CombatManager.Instance.IsInProgress)
@@ -49,7 +49,7 @@ public class PollipPouch : SilkSongReic
 			return;
 		}
         Flash();
-	    await PowerCmd.Apply<PoisonPower>(target,result.UnblockedDamage,Owner.Creature,null);
+	    await PowerCmd.Apply<PoisonPower>(target,result.UnblockedDamage/2,null,null);
         await Task.CompletedTask;
 	}
 }

@@ -51,6 +51,6 @@ public class Pimpillo: ToolRelic
         {
             cnt = 4;
         }
-        public override RelicRarity Rarity => RelicRarity.Uncommon;
+        public override RelicRarity Rarity => RelicRarity.Rare;
 }
 }

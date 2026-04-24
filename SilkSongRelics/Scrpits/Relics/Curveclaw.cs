@@ -28,7 +28,17 @@ namespace SilkSongRelics.Scrpits.Relics
 [Pool(typeof(SharedRelicPool))]
 public class Curveclaw: ToolRelic
 {
-    public override CardModel ToolCard=> Owner.Creature.CombatState.CreateCard<ToolCurveclaw>(Owner);
+    public override CardModel ToolCard
+    {
+        get
+        {
+            if (Owner.Creature.Player.RunState.TotalFloor > 34)
+            {
+                return Owner.Creature.CombatState.CreateCard<ToolCurvesickle>(Owner);
+            }
+            return Owner.Creature.CombatState.CreateCard<ToolCurveclaw>(Owner);
+        }
+    }
         private int cnt=8;
     
     [SavedProperty]
@@ -47,14 +57,5 @@ public class Curveclaw: ToolRelic
             cnt = 8;
         }
         public override RelicRarity Rarity => RelicRarity.Common;
-    public override async Task AfterRoomEntered(AbstractRoom room)
-	{
-		if (Owner.Creature.Player.RunState.TotalFloor>34)
-		{
-                RelicModel relicById = base.Owner.GetRelicById(this.Id);
-                RelicModel replace = ModelDb.Relic<Curvesickle>().ToMutable();
-                await RelicCmd.Replace(relicById, replace);
-        }
-	}
 }
 }

@@ -21,7 +21,7 @@ namespace SilkSongRelics.Scrpits.Relics
 [Pool(typeof(SharedRelicPool))]
 public class Weaveighter : SilkSongReic
 {
-    public override RelicRarity Rarity => RelicRarity.Rare;
+    public override RelicRarity Rarity => RelicRarity.Uncommon;
   	protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[1]
 	{
 		new EnergyVar(1)
@@ -38,7 +38,11 @@ public class Weaveighter : SilkSongReic
 		{
 			return amount;
 		}
-		return amount + (decimal)base.DynamicVars.Energy.IntValue;
+		if(player.Creature.CombatState.RoundNumber<=3)
+		{
+			return amount + (decimal)base.DynamicVars.Energy.IntValue;
+		}
+		return amount;
 	}
 }
 }

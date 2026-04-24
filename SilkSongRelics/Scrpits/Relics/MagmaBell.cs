@@ -52,7 +52,7 @@ public class MagmaBell : SilkSongReic
 			return;
 		}
         Flash();
-		await PowerCmd.Apply<BurnPower>(dealer,4,Owner.Creature,null);
+		await PowerCmd.Apply<BurnPower>(dealer,2,Owner.Creature,null);
         await Task.CompletedTask;
 	}
 }

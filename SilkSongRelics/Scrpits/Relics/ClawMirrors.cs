@@ -28,7 +28,7 @@ public class ClawMirrors : SilkSongReic,IRightCilckable
 {
 	public override bool IsUsedUp => usedup;
 	bool usedup=false;
-	protected override IEnumerable<DynamicVar> CanonicalVars => [(new DamageVar(3m, ValueProp.Unpowered))];
+	protected override IEnumerable<DynamicVar> CanonicalVars => [(new DamageVar(2m, ValueProp.Unpowered))];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [(StunIntent.GetStaticHoverTip())];
     public override RelicRarity Rarity => RelicRarity.Rare;
   public override async Task AfterRoomEntered(AbstractRoom room)

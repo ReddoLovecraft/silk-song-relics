@@ -25,6 +25,11 @@ public class MagnetiteDice : SilkSongReic
     public override RelicRarity Rarity => RelicRarity.Rare;
      public override decimal ModifyHpLostAfterOsty(Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
+        if(target==null)
+        return amount;
+        if(target.CombatState==null)
+        return amount;
+
           if(target==base.Owner.Creature)
         {
             //自身受击

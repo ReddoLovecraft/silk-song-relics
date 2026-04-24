@@ -19,7 +19,7 @@ namespace SilkSongRelics.Scrpits.Relics
 [Pool(typeof(SharedRelicPool))]
 public class QuickSling: SilkSongReic
 {
-    public override RelicRarity Rarity => RelicRarity.Common;
+    public override RelicRarity Rarity => RelicRarity.Uncommon;
      public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
 	{
 		if (cardPlay.Card.Owner == base.Owner&&cardPlay.Resources.EnergyValue==0)

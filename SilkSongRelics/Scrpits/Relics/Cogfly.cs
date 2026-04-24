@@ -45,13 +45,36 @@ public class Cogfly: ToolRelic
         }
     public override async Task OnRightClick(PlayerChoiceContext context)
      { 
-        if(Owner.Creature.CombatState.RunState.CurrentRoom is CombatRoom&&!IsUsedUp)
-        {
-            Flash();
-            ToolCount--;
-            InvokeDisplayAmountChanged();
-            await PowerCmd.Apply<CogflyPower>(Owner.Creature,1,Owner.Creature,null);
-        }
+		if (!(Owner.Creature.CombatState.RunState.CurrentRoom is CombatRoom) || IsUsedUp)
+		{
+			return;
+		}
+
+		bool mp = IsMultiplayerActiveForOwner(context);
+		if (mp)
+		{
+			if (TryQueueNetAction(context, new RightClickNetAction(RightClickNetKind.Cogfly, Id.Entry), out Task? task))
+			{
+				MegaCrit.Sts2.Core.Logging.Log.Info($"SilkSongRelics: right-click Cogfly queued ({Id.Entry})");
+				if (task != null)
+				{
+					await task;
+				}
+			}
+			else
+			{
+				MegaCrit.Sts2.Core.Logging.Log.Warn($"SilkSongRelics: right-click Cogfly could not queue net action ({Id.Entry})");
+			}
+			return;
+		}
+		else
+		{
+			MegaCrit.Sts2.Core.Logging.Log.Info($"SilkSongRelics: right-click Cogfly treated as singleplayer ({Id.Entry})");
+		}
+
+		Flash();
+		ToolCount--;
+		await PowerCmd.Apply<CogflyPower>(Owner.Creature, 1, Owner.Creature, null);
 
      }
     public override RelicRarity Rarity => RelicRarity.Common;

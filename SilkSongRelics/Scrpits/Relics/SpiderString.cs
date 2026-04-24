@@ -20,6 +20,15 @@ namespace SilkSongRelics.Scrpits.Relics
 public class SpiderString : SilkSongReic
 {
     public override RelicRarity Rarity => RelicRarity.Rare;
+	bool flag=true;
+	public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+            if (player != base.Owner)
+            {
+                return;
+            }
+           this.flag=true;
+    }
    	public override decimal ModifyPowerAmountGiven(PowerModel power, Creature giver, decimal amount, Creature? target, CardModel? cardSource)
 	{
         if(power.Type!=PowerType.Buff)
@@ -34,6 +43,11 @@ public class SpiderString : SilkSongReic
         {
 			return amount;
 		}
+        if(!this.flag)
+        {
+            return amount;
+        }
+        this.flag=false;
         Flash();
 		return amount * 2m;
 	}

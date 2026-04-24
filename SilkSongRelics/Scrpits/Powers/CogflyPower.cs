@@ -30,7 +30,7 @@ namespace SilkSongRelics.Scrpits.Powers
 			if (hittableEnemies.Count != 0)
 			{
 				Creature item = base.Owner.Player.RunState.Rng.CombatTargets.NextItem(hittableEnemies);
-				await CreatureCmd.Damage(choiceContext, new List<Creature>() { item }, 3, ValueProp.Unpowered, null, null);
+				await CreatureCmd.Damage(choiceContext, new List<Creature>() { item }, 5, ValueProp.Unpowered, null, null);
 			}
 			}
 		}

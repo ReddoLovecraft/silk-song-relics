@@ -37,7 +37,7 @@ public class SilkspeedAnklets : SilkSongReic
     {
         cnt++;
         InvokeDisplayAmountChanged();
-        if(cnt>=8)
+        if(cnt>=10)
         {
             Flash();
             await PowerCmd.Apply<DexterityPower>(Owner.Creature,1,Owner.Creature,null);
